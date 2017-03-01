@@ -1,6 +1,8 @@
+package sorting;
+
 
 import java.util.Arrays;
-import org.apache.commons.lang.time.*;
+import org.apache.commons.lang.time.StopWatch;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -11,37 +13,40 @@ import org.apache.commons.lang.time.*;
  *
  * @author Jmach
  */
-public class InsertionSort
+public class SelectionSort
 {
 
     StopWatch stopWatch = new StopWatch();
 
-    public void insertionSort(int[] arr)
+    public void selectionSort(int[] arr)
     {
-        int holePosition;
-        int valueToInsert;
-
-        System.out.println("---------------Insertion sort--------------------");
+        System.out.println("---------------Selection sort--------------------");
         System.out.println("Unsortet: " + Arrays.toString(arr));
 
         stopWatch.start();
-        for (int i = 1; i < arr.length; i++)
+        for (int i = 0; i < arr.length - 1; i++)
         {
-            valueToInsert = arr[i];
-            holePosition = i;
+            int min = i;
 
-            while (holePosition > 0 && arr[holePosition - 1] > valueToInsert)
+            for (int j = i + 1; j < arr.length; j++)
             {
-                arr[holePosition] = arr[holePosition - 1];
-                holePosition = holePosition - 1;
+                if (arr[j] < arr[min])
+                {
+                    min = j;
+                }
             }
-
-            arr[holePosition] = valueToInsert;
+            if (min != i)
+            {
+                int temp = arr[i];
+                arr[i] = arr[min];
+                arr[min] = temp;
+            }
         }
+
         stopWatch.stop();
         System.out.println("Sortet: " + Arrays.toString(arr));
         System.out.println("Time elapsed: " + stopWatch.getTime());
         stopWatch.reset();
-    }
 
+    }
 }
