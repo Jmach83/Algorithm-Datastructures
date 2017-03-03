@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package queues;
+package interfaces;
 
 import java.util.NoSuchElementException;
 
@@ -11,7 +11,7 @@ import java.util.NoSuchElementException;
  *
  * @author Jmach
  */
-interface Queue<T>
+public interface Queue<T>
 {
     void enqueue(T item);
     T dequeue() throws NoSuchElementException;

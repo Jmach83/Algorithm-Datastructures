@@ -5,6 +5,7 @@
  */
 package queues;
 
+import interfaces.Queue;
 import java.util.NoSuchElementException;
 
 /**
