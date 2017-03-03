@@ -14,9 +14,9 @@ public class Stacks<T> implements Stack<T>
     int top;
     T[] stack;
     
-    public Stacks()
+    public Stacks(int size)
     {
-        stack = (T[]) new Object[10];
+        stack = (T[]) new Object[size];
     }
     
 
@@ -33,9 +33,16 @@ public class Stacks<T> implements Stack<T>
     }
 
     @Override
+    public T peek()
+    {
+        return stack[top];
+    }
+    
+    @Override
     public int size()
     {
         return top;
     }
+
     
 }

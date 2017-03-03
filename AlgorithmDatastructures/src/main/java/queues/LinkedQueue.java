@@ -12,31 +12,75 @@ import java.util.NoSuchElementException;
  *
  * @author Jmach
  */
-public class LinkedQueue implements Queue<Object>
+public class LinkedQueue<T> implements Queue<T>
 {
 
-    @Override
-    public void enqueue(Object item)
+    private class Node
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+        T data;
+        Node next;
+
+        public Node(T data, Node next)
+        {
+            this.data = data;
+            this.next = next;
+        }
+
+    }
+
+    Node head = null;
+    Node tail = null;
+
+    @Override
+    public void enqueue(T item)
+    {
+        Node node = new Node(item, null);
+
+        if (isEmpty())
+        {
+            head = node;
+        } else
+        {
+            tail.next = node;
+
+        }
+        tail = node;
     }
 
     @Override
-    public Object dequeue() throws NoSuchElementException
+    public T dequeue() throws NoSuchElementException
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(isEmpty()){
+            throw new NoSuchElementException();
+        }
+        T item = head.data;
+        
+        if(tail == head){
+            tail = null;
+        }
+        
+        head = head.next;
+        return item;
     }
 
     @Override
-    public Object peek() throws NoSuchElementException
+    public T peek() throws NoSuchElementException
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(isEmpty()){
+            throw new NoSuchElementException();
+        }
+        return head.data;
     }
 
     @Override
     public int size()
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int size = 0;
+        for(Node n = head; n != null; n = n.next){
+            size++;
+        }
+        return size;
     }
-    
+
 }

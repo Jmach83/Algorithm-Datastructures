@@ -9,11 +9,7 @@ package interfaces;
  *
  * @author Jmach
  */
-public interface Stack<T>
+public interface PriorityQueue<T extends Comparable<T>> extends Queue<T>
 {
-    void push(T item);
-    T pop();
-    T peek();
-    int size();
-    default boolean isEmpty() {return size() == 0; }        
+    
 }
