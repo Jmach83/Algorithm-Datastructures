@@ -9,25 +9,33 @@ import interfaces.Stack;
  *
  * @author Jmach
  */
-public class Stacks implements Stack
+public class Stacks<T> implements Stack<T>
 {
+    int top;
+    T[] stack;
+    
+    public Stacks()
+    {
+        stack = (T[]) new Object[10];
+    }
+    
 
     @Override
-    public void push(Object item)
+    public void push(T item)
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        stack[top++] = item;
     }
 
     @Override
-    public Object pop()
+    public T pop()
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return stack[top--];
     }
 
     @Override
     public int size()
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return top;
     }
     
 }
