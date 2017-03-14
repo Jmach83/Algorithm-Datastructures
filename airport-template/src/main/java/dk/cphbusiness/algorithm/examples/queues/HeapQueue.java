@@ -100,24 +100,6 @@ public class HeapQueue implements PriorityQueue<Passenger>
                 return result;
             }
         } while (true);
-        
-
-        
-        do {
-            int l = leftOf(n);
-            int r = rightOf(n);
-            if(l > size){
-                return result;
-            }
-            
-            if(r > size) {
-                c = l;
-            } else if (data[l].compareTo(data[r]) < 0) {
-                c = r;
-            }
-        }
-        return result;
-
     }
 
     @Override
