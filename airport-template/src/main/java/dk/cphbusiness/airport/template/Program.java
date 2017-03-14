@@ -17,7 +17,8 @@ public class Program {
     for (int hour = 7; hour <= 22; hour++) {
       planes.add(new Plane(new Time(hour, 00, 00)));
       }
-    queue = new NotPrioritisingPassengerArrayQueue(10000);
+      queue = new HeapQueue(5);
+    //queue = new NotPrioritisingPassengerArrayQueue(5);
     producer = new PassengerProducer(planes, queue);
     consumer = new PassengerConsumer(planes, queue);
     clock = new Clock(producer, consumer, new Time(05, 00, 00));
@@ -26,7 +27,7 @@ public class Program {
   public static void main(String[] args) {
     setup();
     System.out.println("Hello Airport");
-   // new Thread(clock).start();
+    new Thread(clock).start();
     
     }
   

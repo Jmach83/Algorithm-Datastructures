@@ -49,8 +49,8 @@ public class HeapQueue implements PriorityQueue<Passenger>
     {
         //data[0] index bruges til swap plads 
         int p = ++size;
-        data[p] = passenger;
-        int pp = parentOf(p);
+        data[p] = passenger;    //size altså næste ledige plads i array
+        int pp = parentOf(p); // p/2
 
         while (true)
         {
