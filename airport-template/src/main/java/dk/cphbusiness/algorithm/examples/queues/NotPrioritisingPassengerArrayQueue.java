@@ -31,6 +31,7 @@ public class NotPrioritisingPassengerArrayQueue implements PriorityQueue<Passeng
     public Passenger dequeue() {
       if (size == 0)
           throw new NoSuchElementException("Cannot remove from empty queue");
+      
       Passenger item = items[head];
       items[head] = null;
       head = (head + 1) % items.length;
