@@ -68,11 +68,33 @@ public class HeapQueue implements PriorityQueue<Passenger>
         {
             throw new NoSuchElementException();
         }
-        
+
         Passenger result = data[1];
+
+        data[0] = data[pp];     //refactor til en swap metode
+        data[pp] = data[p];
+        data[p] = data[0];
+        p = pp;
+        pp = parentOf(p);
         
+        int n = 1;
+        int c = 0;
+        
+        do {
+            int l = leftOf(n);
+            int r = rightOf(n);
+            if(l > size){
+                return result;
+            }
+            
+            if(r > size) {
+                c = l;
+            } else if (data[l].compareTo(data[r]) < 0) {
+                c = r;
+            }
+        }
         return result;
-        
+
     }
 
     @Override
@@ -82,16 +104,16 @@ public class HeapQueue implements PriorityQueue<Passenger>
         {
             throw new NoSuchElementException();
         }
-        
+
         Passenger result = data[1];
         return result;
-        
+
     }
 
     @Override
     public int size()
     {
-       return size;
+        return size;
     }
 
 }
