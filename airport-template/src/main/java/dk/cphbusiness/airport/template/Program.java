@@ -1,5 +1,6 @@
 package dk.cphbusiness.airport.template;
 
+import dk.cphbusiness.algorithm.examples.queues.HeapQueue;
 import dk.cphbusiness.algorithm.examples.queues.NotPrioritisingPassengerArrayQueue;
 import dk.cphbusiness.algorithm.examples.queues.PriorityQueue;
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ public class Program {
   public static void main(String[] args) {
     setup();
     System.out.println("Hello Airport");
-    //new Thread(clock).start();
+   // new Thread(clock).start();
     
     }
   

@@ -22,6 +22,12 @@ public class HeapQueue implements PriorityQueue<Passenger>
     {
         this.data = new Passenger[capacity];
     }
+    
+    private void swap(int pointer, int parentPointer) {
+        data[0] = data[pointer];
+        data[pointer] = data[parentPointer];
+        data[parentPointer] = data[0];
+    }
 
     private int parentOf(int p)
     {
@@ -70,8 +76,30 @@ public class HeapQueue implements PriorityQueue<Passenger>
         }
         
         Passenger result = data[1];
+        swap(1, size--);
+        int child = 0;
+        int pointer = 1;
+        do {
+            int leftOf = leftOf(pointer);
+            int rightOf = rightOf(pointer);
+            
+            if (leftOf > size) {
+                return result;
+            } else if (rightOf > size) {
+                child = leftOf;
+            } else if (data[leftOf].compareTo(data[rightOf]) < 0) {
+                child = leftOf;
+            } else {
+                child = rightOf;
+            }
+            if (data[pointer].compareTo(data[child]) > 0) {
+                swap(pointer, child);
+                pointer = child;
+            } else {
+                return result;
+            }
+        } while (true);
         
-        return result;
         
     }
 
