@@ -1,5 +1,6 @@
-package dk.cphbusiness.algorithm.examples.graphs;
+package tables;
 
+import interfaces.Graph;
 import java.io.PrintStream;
 import java.util.Collection;
 import java.util.HashSet;
@@ -51,7 +52,6 @@ public class SimpleRootedTree<D,W> implements RootedTree<D, W>{
     return edges;
     }
 
-  @Override
   public Collection<Edge<D, W>> getEdgesFrom(Vertex<D, W> vertex) {
     // This piece of code simply filters away edges
     // that is not in the edges set.
@@ -66,7 +66,6 @@ public class SimpleRootedTree<D,W> implements RootedTree<D, W>{
    * the tree contains cycles.
    * @param out The stream to print on
    */
-  @Override
   public void print(PrintStream out) {
     print(out, "", root);
     }

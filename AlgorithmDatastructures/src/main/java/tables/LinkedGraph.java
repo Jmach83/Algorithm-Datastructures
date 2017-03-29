@@ -7,7 +7,8 @@ package tables;
 
 import interfaces.Graph;
 import java.util.Collection;; 
-
+import interfaces.Graph;
+import java.io.PrintStream;
 import interfaces.Graph;
 
 /**
@@ -41,6 +42,26 @@ public class LinkedGraph<D, W> implements Graph<D, W>
     public Collection<Edge<D, W>> getEdges()
     {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Vertex<D, W> vertexOf(D data) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void addEdge(W weight, D tailData, D headData, boolean undirected) {
+        Graph.super.addEdge(weight, tailData, headData, undirected); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Collection<Edge<D, W>> getEdgesFrom(Vertex<D, W> vertex) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void print(PrintStream out) {
+        Graph.super.print(out); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

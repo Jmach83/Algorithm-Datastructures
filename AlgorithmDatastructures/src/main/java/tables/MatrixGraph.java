@@ -1,5 +1,6 @@
-package dk.cphbusiness.algorithm.examples.graphs;
+package tables;
 
+import interfaces.Graph;
 import java.io.PrintStream;
 import java.util.Collection;
 import java.util.HashSet;
@@ -12,7 +13,6 @@ public class MatrixGraph<D, W> implements Graph<D, W> {
     addVertex(data);
     }
   
-  @Override
   public void print(PrintStream out) {
     out.print("\nVertices          Edges ");
     for (int j = 0; j < data.length; j++) out.printf("%4d", j);
@@ -76,7 +76,6 @@ public class MatrixGraph<D, W> implements Graph<D, W> {
     return result;
     }
 
-  @Override
   public Collection<Edge<D, W>> getEdgesFrom(Vertex<D, W> vertex) {
     int i = ((MatrixVertex)vertex).i;
     // Code moved from MatrixVertex.getAdjacentEdges()

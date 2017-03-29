@@ -1,9 +1,11 @@
-package dk.cphbusiness.algorithm.examples.graphs;
+package tables;
 
-import dk.cphbusiness.algorithm.examples.graphs.Graph.Edge;
-import dk.cphbusiness.algorithm.examples.graphs.Graph.Vertex;
-import dk.cphbusiness.algorithm.examples.queues.LinkedQueue;
-import dk.cphbusiness.algorithm.examples.queues.Queue;
+import interfaces.Graph;
+import interfaces.Graph.Edge;
+import interfaces.Graph.Vertex;
+import interfaces.Queue;
+import queues.LinkedQueue;
+import queues.Queues;
 import java.util.HashSet;
 import java.util.Set;
 

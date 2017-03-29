@@ -1,4 +1,6 @@
-package interfaces;
+package tables;
+
+import interfaces.Graph;
 
 /**
  * A rooted tree is a connected directed graph with no cycles.
