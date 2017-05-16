@@ -27,6 +27,9 @@ public class Main
         String[] shortWordArr = Reader.toStringArray("shakespearetext.txt", "[^A-Za-z]");
         String[] shortWordArr2 = Reader.toStringArray("shakespearetext.txt", "[^A-Za-z]");
         String[] longWordArr = Reader.toStringArray("shakespearetext 2.txt", "[^A-Za-z]");
+        
+        
+        
 //        System.out.println(Arrays.toString(longWordArr));
 //        
 //        timer.stopWatch();
@@ -59,12 +62,23 @@ public class Main
 //        
 //        System.out.println(ast.print());
 //        System.out.println("size " + ast.size());
-
-        HashedSymbolTable<String, Integer> hash = new HashedSymbolTable<>();
-        for (int i = 0; i < shortWordArr2.length; i++) {
-            hash.put(shortWordArr2[i]);
+    
+//        HashedSymbolTable<String, Integer> hash = new HashedSymbolTable<>();
+//        for (int i = 0; i < shortWordArr2.length; i++) {
+//            hash.put(shortWordArr2[i]);
+//        }
+//        
+//        hash.print();
+//        String[] arr2 = new String[3];
+//        for (String word : arr) {
+//            System.out.println(word.toUpperCase());
+//        }
+//         
+//        String test = "test";
+        Trie2 trie = new Trie2();
+        for (int i = 0; i < longWordArr.length; i++) {
+            trie.put(longWordArr[i].toUpperCase());
         }
-        
-        hash.print();
+       
     }
 }
