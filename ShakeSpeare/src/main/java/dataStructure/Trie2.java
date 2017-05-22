@@ -58,19 +58,27 @@ public class Trie2 {
         return x;
     }
     
-    public void print(PrintStream out) {
-        if (root.val != null) {
-            out.println(root.val);
-        }
-        if (root.next != null) {
-            for (Node node : root.next) {
-                if (node == null) {
-                    continue;
-                }
-                print(out);
-            }
-        }
-    }
+//    public void print(PrintStream out) {
+//        if (root.val != null) {
+//            out.println(root.val);
+//        }
+//        if (root.next != null) {
+//            for (Node node : root.next) {
+//                if (node == null) {
+//                    continue;
+//                }
+//                print(out);
+//            }
+//        }
+//    }
+//    public void print()
+//    {
+//
+//        for (Node x = root; x != null; x = x.next[root])
+//        {
+//            System.out.println(x.toString());
+//        }
+//    }
     
     public static void main(String[] args) {
     Trie2 trie = new Trie2();
@@ -84,5 +92,7 @@ public class Trie2 {
     
     //trie.print(System.out);
     }
+    
+   
 }
 
