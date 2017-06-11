@@ -30,7 +30,7 @@ public class ArraySymbolTable<Key, Value> {
         return size() == 0;
     }
 
-    private void resize(int size) {
+    private void resize(int size) {     //resize bliver kaldt i put
         Key[] tempkey = (Key[]) new Object[size];
         Integer[] tempval = new Integer[size];
 
@@ -51,20 +51,18 @@ public class ArraySymbolTable<Key, Value> {
 
         for (int i = 0; i < n; i++) {
 
-            if (key.equals(keys[i])) {
+            if (key.equals(keys[i])) { //finder key hvis den eksistere og tælle value op
 
                 values[i]++;
 
             }
         }
-        if (n >= values.length) {
+        if (n >= values.length) { //hvis array values er fyldt, dobbler det op
 
             resize(2 * n);
-        } else {
+        } else {                    // tilføjer key og value hvis key ikke eksistere
             values[n] = 1;
-            //  System.out.println("valu " + values[n]);
             keys[n] = key;
-            //  System.out.println("keysn " + keys[n]);
             n++;
         }
     }

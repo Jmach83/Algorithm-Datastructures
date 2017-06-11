@@ -42,24 +42,24 @@ public class LinkedSymbolTable<Key, Value>
         //for loop gennem lister, hvis key findes overskriv med ny val, 
         //ellers lav ny node som den første i listen
 
-        for (Node x = first; x != null; x = x.next)
+        for (Node x = first; x != null; x = x.next)//tilføjer node eller tæller value op hvis den eksistere
         {
 
-            if (key.equals(x.key))
+            if (key.equals(x.key)) //tæller op her hvis den eksistere
             {
                 x.value++;
                 return;
 
             }
         }
-        first = new Node(key, 1, first);
+        first = new Node(key, 1, first); //tilføjer ny node hvis den ikke eksistere
 
     }
 
     public Integer get(Key key)
     {
         //retunere key value hvis der er et match og ellers null
-        for (Node x = first; x != null; x = x.next)
+        for (Node x = first; x != null; x = x.next)//loop noder igennem
         {
             if (key.equals(x.key))
             {

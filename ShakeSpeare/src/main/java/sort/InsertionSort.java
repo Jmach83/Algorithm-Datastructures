@@ -6,28 +6,29 @@
 package sort;
 
 /**
- *
- * @author Jmach
+ *O(n2)
+ * Deler array op I et sortet(subarray) og unsortet del
  */
+
 public class InsertionSort
 {
        public String[] insertion(String[] arr)
     {
-        int holePosition;
-        String valueToInsert;
+        int holePosition;   //starter som sidste position i sorted subarray
+        String valueToInsert;   //det element der er tiltænk at lægges i det sorted array
 
         for (int i = 1; i < arr.length; i++)
         {
             valueToInsert = arr[i];
             holePosition = i;
 
-            while (holePosition > 0 && arr[holePosition - 1].compareTo(valueToInsert) > 0)
+            while (holePosition > 0 && arr[holePosition - 1].compareTo(valueToInsert) > 0) //sortere inde i sub array'et
             {
-                arr[holePosition] = arr[holePosition - 1];
-                holePosition = holePosition - 1;
+                arr[holePosition] = arr[holePosition - 1];  //swapper string i array
+                holePosition = holePosition - 1; //ændre index for holeposition
             }
 
-            arr[holePosition] = valueToInsert;
+            arr[holePosition] = valueToInsert; //valueToinsert lægges i arr[holePosition]  
         }
 
         return arr;
