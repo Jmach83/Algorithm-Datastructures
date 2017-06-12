@@ -22,7 +22,7 @@ public class InsertionSort
             valueToInsert = arr[i];
             holePosition = i;
 
-            while (holePosition > 0 && arr[holePosition - 1].compareTo(valueToInsert) > 0) //sortere inde i sub array'et
+            while (holePosition > 0 && arr[holePosition - 1].compareTo(valueToInsert) > 0) //sortere inde i sub array'et, arg -> precedes = pos, arg -> follow = neg
             {
                 arr[holePosition] = arr[holePosition - 1];  //swapper string i array
                 holePosition = holePosition - 1; //ændre index for holeposition
