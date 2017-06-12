@@ -6,7 +6,7 @@
 package sort;
 
 /**
- *0(log n)
+ *0(n log n)
  * Top down merge, deler array indtil basecase(array længde 1)
  * samler til større array igen hvert skridt ved at sammenligne element
  */
