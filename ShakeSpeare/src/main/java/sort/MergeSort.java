@@ -15,7 +15,7 @@ public class MergeSort
     public String[] mergeSorting(String[] arr)
     {
 
-        if (arr.length >= 2) 
+        if (arr.length > 1) 
         {
             String[] left = new String[arr.length / 2];    //halvere array
             String[] right = new String[arr.length - arr.length / 2];
@@ -39,19 +39,19 @@ public class MergeSort
 
     private static void merge(String[] result, String[] left, String[] right)
     {
-        int i1 = 0; //index for de 2 arrays der skal samles   2     
-        int i2 = 0;//2
-        for (int i = 0; i < result.length; i++) //result er det oprindelige array, som bliver overskrevet med det der bliver sorteret
+        int i = 0; //index for de 2 arrays der skal samles   2     
+        int j = 0;//2
+        for (int k = 0; k < result.length; k++) //result er det oprindelige array, som bliver overskrevet med det der bliver sorteret
         {
-            if (i2 >= right.length || (i1 < left.length
-                    && left[i1].compareToIgnoreCase(right[i2]) < 0))
+            if (j >= right.length || (i < left.length
+                    && left[i].compareToIgnoreCase(right[j]) < 0))
             {
-                result[i] = left[i1];
-                i1++;
+                result[k] = left[i];
+                i++;
             } else
             {
-                result[i] = right[i2];
-                i2++;
+                result[k] = right[j];
+                j++;
             }
         }
     }
